@@ -75,7 +75,7 @@ if (overAllGrade >= 80){
 }
 
 
-let finalGrade = console.log(`>>> Overall Grade: ${overAllGrade}% (${numberOfCorrectAnswers} of ${numberOfQuizQuestions} responses correct) <<<\n>>> Status: ${status} <<<`);
+let finalGrade = console.log(`>>> Overall Grade: ${Number(overAllGrade)}% (${numberOfCorrectAnswers} of ${numberOfQuizQuestions} responses correct) <<<\n>>> Status: ${status} <<<`);
 grade = (gradedReport + finalGrade)
 // }
   return grade;
