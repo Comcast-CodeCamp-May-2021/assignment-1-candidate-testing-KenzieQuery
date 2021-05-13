@@ -68,7 +68,7 @@ gradedReport = console.log(`${questions[i]}\nYour Answer: ${candidateAnswers[i]}
 //let numberOfCorrectAnswers = numberOfAnswers
 let grade = Number((numberOfCorrectAnswers/numberOfQuizQuestions)*100);
 console.log(overAllGrade)
-if (overAllGrade >= 80){
+if (grade >= 80){
   status = "Congratulations! You passed the Initial Evaluation!"
 } else {
   status = "Sorry, review your answers with the correct answers and try again next cycle."
