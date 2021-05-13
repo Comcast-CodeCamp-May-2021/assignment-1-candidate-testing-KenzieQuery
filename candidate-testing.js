@@ -81,21 +81,6 @@ grade = (gradedReport + finalGrade)
   return grade;
 }
 
-
-//case insensitive equality check
-
-
-
-
-
-
-
-
-
-
-
-
-
 // Don't write any code below this line //
 // And don't change these or your program will not run as expected //
 module.exports = {
