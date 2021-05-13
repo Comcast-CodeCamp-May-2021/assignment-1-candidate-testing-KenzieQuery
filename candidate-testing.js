@@ -67,7 +67,7 @@ gradedReport = console.log(`${questions[i]}\nYour Answer: ${candidateAnswers[i]}
 
 //let numberOfCorrectAnswers = numberOfAnswers
 let grade = Number((numberOfCorrectAnswers/numberOfQuizQuestions)*100);
-console.log(overAllGrade)
+
 if (grade >= 80){
   status = "Congratulations! You passed the Initial Evaluation!"
 } else {
