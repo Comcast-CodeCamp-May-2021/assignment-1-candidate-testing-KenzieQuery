@@ -43,7 +43,7 @@ for (i = 0; i < questions.length; i++) {
 }
 
 function gradeQuiz(candidateAnswers) {
-  let grade;
+  
   let numberOfQuizQuestions = Number(questions.length);
   let numberOfCorrectAnswers = 0;
   let status = "";
@@ -66,7 +66,7 @@ gradedReport = console.log(`${questions[i]}\nYour Answer: ${candidateAnswers[i]}
 }
 
 //let numberOfCorrectAnswers = numberOfAnswers
-let overAllGrade = Number((numberOfCorrectAnswers/numberOfQuizQuestions)*100);
+let grade = Number((numberOfCorrectAnswers/numberOfQuizQuestions)*100);
 console.log(overAllGrade)
 if (overAllGrade >= 80){
   status = "Congratulations! You passed the Initial Evaluation!"
@@ -75,9 +75,9 @@ if (overAllGrade >= 80){
 }
 
 
-let finalGrade = console.log(`>>> Overall Grade: ${Number(overAllGrade)}% (${numberOfCorrectAnswers} of ${numberOfQuizQuestions} responses correct) <<<\n>>> Status: ${status} <<<`);
-grade = (gradedReport + finalGrade)
-// }
+//let finalGrade = 
+//grade = (gradedReport + finalGrade)
+console.log(`>>> Overall Grade: ${grade}% (${numberOfCorrectAnswers} of ${numberOfQuizQuestions} responses correct) <<<\n>>> Status: ${status} <<<`);
   return grade;
 }
 
