@@ -1,46 +1,84 @@
 const input = require('readline-sync');
 
-// TODO 2: modify your quiz app to ask 5 questions //
-
 // TODO 1.1a: Define candidateName // 
-let candidateName;
+let candidateName ="";
+//let candidateName = "";
 // TODO 1.2a: Define question, correctAnswer, and candidateAnswer //
-let question;
-let correctAnswer;
-let candidateAnswer;
-let questions;
-let correctAnswers;
-let candidateAnswers;
+let question = "Who was the first American woman in space? ";
+//should correct answer require capital S R?
+let correctAnswer = "Sally Ride";
+let candidateAnswer = ""; 
+let questions = ["Who was the first American woman in space? ", "True or false: 5 kilometer == 5000 meters? ", "(5 + 3)/2 * 10 = ? ", "Given the array [8, 'Orbit', 'Trajectory', 45], what entry is at index 2? ", "What is the minimum crew size for the ISS? "];
+let correctAnswers = ["Sally Ride", "true", "40", "Trajectory", "3"];
+let candidateAnswers = [];
 
+function runProgram() {
+  // TODO 1.1c: write a message to the console greeting the user using the name they just provided.
+  //askForName();
+  console.log(`\nWelcome to your Initial Evaluation ${askForName()}\n`);
+  askQuestion();
+  console.log(`\nCandidate Name: ${candidateName}`);
+  gradeQuiz(this.candidateAnswers);
+}
 
 function askForName() {
   // TODO 1.1b: Ask for candidate's name //
-
+return candidateName = input.question("What is your first and last name?: ");
 }
 
+// TODO 2: modify your quiz app to ask 5 questions //
 function askQuestion() {
-  // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
-
-
+  // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer
+  //2.	Replace your code from TODO 1.2b with a loop that programmatically asks each question in the array and stores the user's responses. Use unshift or push 
+//Question 1:
+//return candidateAnswer = input.question(question);
+//Question 1-5:
+for (i = 0; i < questions.length; i++) {
+  candidateAnswers[i] = input.question(questions[i])
+  //candidateAnswers = candidateAnswers[i]  
+  //candidateAnswers += input.question(question[i]);
+  //return candidateAnswers = input.question(questions);
+}
+  return candidateAnswers[i];
 }
 
 function gradeQuiz(candidateAnswers) {
-
-  // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
-
-
-  let grade;
   
+  let numberOfQuizQuestions = Number(questions.length);
+  let numberOfCorrectAnswers = 0;
+  let status = "";
+  // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly /
 
-  return grade;
+// if (correctAnswer && candidateAnswer === "Sally Ride"){
+// //if correctAnswers[i] same as candidateAnswers[i] 
+// if (correctAnswers[i] === candidateAnswers[i]){
+//   console.log("Correct!")
+// }else{
+//   console.log("Incorrect. Please try again.")
+// }
+
+// Replace the basic feedback from TODO 1.2c with a template literal that displays each of the candidate's responses in addition to the corresponding correct answers.
+for (i = 0; i < questions.length; i++) {
+gradedReport = console.log(`${questions[i]}\nYour Answer: ${candidateAnswers[i]}\nCorrect Answer: ${correctAnswers[i]}\n`)
+  if (correctAnswers[i].toUpperCase() === candidateAnswers[i].toUpperCase()){
+  numberOfCorrectAnswers += 1;
+  }
 }
 
-function runProgram() {
-  askForName();
-  // TODO 1.1c: Ask for candidate's name //
-  
-  askQuestion();
-  gradeQuiz(this.candidateAnswers);
+//let numberOfCorrectAnswers = numberOfAnswers
+let grade = Number((numberOfCorrectAnswers/numberOfQuizQuestions)*100);
+
+if (grade >= 80){
+  status = "Congratulations! You passed the Initial Evaluation!"
+} else {
+  status = "Sorry, review your answers with the correct answers and try again next cycle."
+}
+
+
+//let finalGrade = 
+//grade = (gradedReport + finalGrade)
+console.log(`>>> Overall Grade: ${grade}% (${numberOfCorrectAnswers} of ${numberOfQuizQuestions} responses correct) <<<\n>>> Status: ${status} <<<`);
+  return grade;
 }
 
 // Don't write any code below this line //
